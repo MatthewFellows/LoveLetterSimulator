@@ -1,6 +1,7 @@
 package cards;
 
 import game.Game;
+import game.Player;
 
 public class Handmaid extends Card {
 
@@ -11,8 +12,8 @@ public class Handmaid extends Card {
 	}
 
 	@Override
-	public void discard(Game currentGame) {
-		super.discard(currentGame);
+	public void discard(Game currentGame, Player otherPlayerEffected, int otherRank) {
+		super.discard(currentGame, otherPlayerEffected, otherRank);
 	}
 
 }

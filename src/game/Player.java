@@ -2,11 +2,11 @@ package game;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 import cards.Card;
 
-public class Player {
+public abstract class Player {
+	
 	private Card currentHand;
 	private Game currentGame;
 	private String playerName;
@@ -58,19 +58,6 @@ public class Player {
 	public void setCurrentDecisionCard(Card currentDecisionCard) {
 		this.currentDecisionCard = currentDecisionCard;
 	}
-	
-	public Card decideWhichCardToPlay() {
-		Card cardToReturn;
-		if (new Random().nextBoolean()) {
-			cardToReturn = currentDecisionCard;
-			currentDecisionCard = null;
-		} else {
-			cardToReturn = currentHand;
-			currentHand = currentDecisionCard;
-		}
-		addCardThatHasBeenPlayed(cardToReturn);
-		return cardToReturn;
-	}
 
 	public List<Card> getCardsPlayed() {
 		return cardsPlayed;
@@ -99,4 +86,8 @@ public class Player {
 	public int getWins() {
 		return numWins;
 	}
+	
+	public abstract void play(Game currentGame);
+	
+	public abstract Card decideWhichCardToPlay();
 }

@@ -55,8 +55,7 @@ public class Game {
 					cardToPlay.discard(this);
 					currentGo++;
 				} else {
-					Card cardToPlay = currentPlayer.decideWhichCardToPlay();
-					cardToPlay.discard(this);
+					currentPlayer.play(this);
 					currentGo++;
 				}
 			}
@@ -138,10 +137,10 @@ public class Game {
 						currentHighest = getTotalPlayed(currentHighest) > getTotalPlayed(p) ? currentHighest : p;
 					}
 				}
-				//System.out.println(currentHighest.getPlayerName() + " wins with: " + currentHighest.getCurrentHand());
+				/*System.out.println(currentHighest.getPlayerName() + " wins with: " + currentHighest.getCurrentHand());
 				for (Player p : getOtherPlayers(currentHighest, false)) {
-					//System.out.println("\t" + p.getPlayerName() + " looses with: " + p.getCurrentHand());
-				}
+					System.out.println("\t" + p.getPlayerName() + " looses with: " + p.getCurrentHand());
+				}*/
 				currentHighest.win();
 			} else if (players.size() > 0) {
 				//System.out.println(players.get(0) + " wins with: " + players.get(0).getCurrentHand());
