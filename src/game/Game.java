@@ -17,14 +17,14 @@ public class Game {
 	public void setup() {
 		deck.setup();
 		
-		Player player1 = new LowestValueCardPlayer();
-		player1.setupPlayer(deck.getNextCard(), this, "Player 1");
+		Player player1 = new SmartCardPlayer();
+		player1.setupPlayer(deck.getNextCard(), this, "Smart Card Player");
 		originalPlayers.add(player1);
-		Player player2 = new RandomPlayer();
-		player2.setupPlayer(deck.getNextCard(), this, "Player 2");
+		Player player2 = new LowestValueCardPlayer();
+		player2.setupPlayer(deck.getNextCard(), this, "Lowest Value Player");
 		originalPlayers.add(player2);
 		Player player3 = new RandomPlayer();
-		player3.setupPlayer(deck.getNextCard(), this, "Player 3");
+		player3.setupPlayer(deck.getNextCard(), this, "Random Player");
 		originalPlayers.add(player3);
 		
 	}

@@ -10,7 +10,7 @@ public class RandomPlayer extends Player {
 	
 	@Override
 	public void play(Game currentGame) {
-		Card cardToPlay = this.decideWhichCardToPlay();
+		Card cardToPlay = this.decideWhichCardToPlay(currentGame);
 		
 		List<Player> otherPlayers = currentGame.getOtherUnprotectedPlayers();
 		int otherPlayersCount = otherPlayers.size();
@@ -23,7 +23,7 @@ public class RandomPlayer extends Player {
 	}
 	
 	@Override
-	public Card decideWhichCardToPlay() {
+	public Card decideWhichCardToPlay(Game currentGame) {
 		Card cardToReturn;
 		if (new Random().nextBoolean()) {
 			cardToReturn = getCurrentDecisionCard();

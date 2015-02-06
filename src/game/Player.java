@@ -89,5 +89,5 @@ public abstract class Player {
 	
 	public abstract void play(Game currentGame);
 	
-	public abstract Card decideWhichCardToPlay();
+	public abstract Card decideWhichCardToPlay(Game currentGame);
 }
